@@ -1,0 +1,33 @@
+{% extends "_base.html.jinja2" %}
+{% block title %}Note Application | Sign Up{% endblock %}
+{% block body %}
+    <div class="grid grid--site-form site-form">
+  <h1 class="site-form__title">Signup</h1>
+  <div class="site-form__content site-form__content--create-edit">
+    <form class="form grid grid--form" action="" method="post">
+      <div class="form-fields">
+        <div class="form-group">
+          <label class="form-group__label" for="fname">First Name</label>
+          <input class="form-group__input" type="text" name="fname" id="fname">
+        </div>
+        <div class="form-group">
+          <label class="form-group__label" for="lname">Last Name</label>
+          <input class="form-group__input" type="text" name="lname" id="lname">
+        </div>
+        <div class="form-group">
+          <label class="form-group__label" for="email">Email</label>
+          <input class="form-group__input" type="email" name="email" id="email">
+        </div>
+        <div class="form-group">
+          <label class="form-group__label" for="password">Password</label>
+          <input class="form-group__input" type="password" name="password" id="password">
+        </div>
+      </div>
+      <button type="submit"
+              class="button button--primary button--nav site-form__action-btn site-form__action-btn--save form__button">
+        Create
+      </button>
+    </form>
+  </div>
+</div>
+{% endblock %}

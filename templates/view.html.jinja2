@@ -1,0 +1,9 @@
+{% extends "_base.html.jinja2" %}
+{% block title %}Note Application | View Note{% endblock %}
+{% block body %}
+    <div class="grid grid--site-form site-form">
+        <h1 class="site-form__title">{{ note.title }}</h1>
+        <p class="site-form__content site-form__content--view">{{ note.body }}</p>
+        <a href="{{ url_for("index") }}" class="button button--primary button--nav site-form__action-btn">Back</a>
+    </div>
+{% endblock %}
