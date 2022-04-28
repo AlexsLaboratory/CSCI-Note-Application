@@ -26,11 +26,10 @@ class User(db.Model, UserMixin):
 
     def set_password(self, password):
         salt = bcrypt.gensalt(12)
-        self.password = bcrypt.hashpw(password, salt).decode("UTF-8")
+        self.password = bcrypt.hashpw(password.encode('utf8'), salt).decode()
 
     def check_password(self, candidate):
-        return bcrypt.checkpw(bytes(candidate, encoding="utf8"),
-                              bytes(self.password, encoding="utf8"))
+        return bcrypt.checkpw(candidate.encode("utf8"), self.password.encode("utf8"))
 
 
 @login.user_loader
